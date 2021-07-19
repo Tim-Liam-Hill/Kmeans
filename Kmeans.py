@@ -1,5 +1,5 @@
 import numpy as np
-import pandas
+import sys
 
 def kmeans(centroids, arr):
     while(True):
@@ -17,7 +17,7 @@ def assignPointsToClusters(centroids, arr):
         groups.append([c, []])
         
     for p in arr:
-        min_distance = 10000000
+        min_distance = sys.maxsize
         cent = []
         for c in centroids:
             dist = np.linalg.norm(p - c)
